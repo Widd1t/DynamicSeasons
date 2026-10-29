@@ -1,0 +1,22 @@
+name: DynamicSeasons
+description: $description
+version: '${version}'
+
+main: com.widdit.dynamicSeasons.DynamicSeasons
+api-version: '26.3'
+load: POSTWORLD
+
+permissions:
+  seasons.use:
+    description: Allows the player to use /season get and see what season it is
+    default: true
+  seasons.admin:
+    description: Allows the user to change the season.
+    default: op
+
+commands:
+  season:
+    description: Check or change current season
+    usage: /season <get|set>
+
+authors: [ Widdit ] # add yourself here if you make a fork, but please dont remove my name :)
