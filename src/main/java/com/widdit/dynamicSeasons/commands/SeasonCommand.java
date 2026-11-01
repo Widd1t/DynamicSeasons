@@ -35,7 +35,7 @@ public class SeasonCommand implements CommandExecutor, TabCompleter {
             }
 
             SeasonManager.Season current = plugin.getSeasonManager().getCurrentSeason();
-            sender.sendMessage("§e[DynamicSeasons] &aThe current season is " + current + "&a.");
+            sender.sendMessage("§e[DynamicSeasons] §aThe current season is " + current + "§a.");
             return true;
         }
 
@@ -67,6 +67,12 @@ public class SeasonCommand implements CommandExecutor, TabCompleter {
             }
         }
 
+        if (subCommand.equals("reload")) {
+            plugin.reloadConfig();
+            sender.sendMessage("§e[DynamicSeasons] §aConfig Reloaded!");
+            return true;
+        }
+
         sender.sendMessage("§cUnknown command, try again?"); // catch all in case the user somehow gets around all that
         return true;
     }
@@ -80,6 +86,9 @@ public class SeasonCommand implements CommandExecutor, TabCompleter {
             }
             if (sender.hasPermission("seasons.admin") && "set".startsWith(args[0].toLowerCase())) {
                 completions.add("set");
+            }
+            if (sender.hasPermission("seasons.admin") && "reload".startsWith(args[0].toLowerCase())) {
+                completions.add("reload");
             }
         } else if (args.length == 2 && args[0].equalsIgnoreCase("set")) {
             if (!sender.hasPermission("seasons.admin")) return completions;

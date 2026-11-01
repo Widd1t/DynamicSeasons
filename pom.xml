@@ -6,7 +6,7 @@
 
     <groupId>com.widdit</groupId>
     <artifactId>DynamicSeasons</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
     <packaging>jar</packaging>
 
     <name>DynamicSeasons</name>

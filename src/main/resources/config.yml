@@ -1,0 +1,37 @@
+# Dymanic Seasons Config
+# Thank you for using my plugin! - Widdit
+
+# Starting Season
+# Choose between: SPRING, SUMMER, AUTUMN, WINTER
+starting-season: SPRING
+days-per-season: 7
+
+# Season Behaviours
+# Crops grow differently each season:
+
+# "type" determines whether crop growth will be sped up
+# or slowed down by the current season
+# Choose between: FAST, SLOW
+
+# Fast gives the crop a chance to skip a growth stage each time it grows
+# Slow gives the crop a chance to not grow each time the game triggers it to grow
+
+# "chance" determines the chance that the crop growth type will be triggered.
+# Choose any number between 0 and 1
+# 1 = always   0 = never
+
+# SPRING
+spring-type: SLOW
+spring-chance: 0 # By default, spring doesn't affect crop growth
+
+# SUMMER
+summer-type: FAST
+summer-chance: 0.5 # 50% chance to skip a level each time a crop grows
+
+# AUTUMN / FALL
+autumn-type: SLOW
+autumn-chance: 0 # By default, autumn doesn't affect crop growth
+
+# WINTER
+winter-type: SLOW
+winter-chance: 0.25 # 25% chance for a crop not to grow when the game triggers it to

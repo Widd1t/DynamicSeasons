@@ -12,8 +12,12 @@ public final class DynamicSeasons extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
+        saveDefaultConfig();
+
         this.seasonManager = new SeasonManager(this); // initialise SeasonManager
         seasonManager.startCalendar();
+        seasonManager.checkConfigForInvalidStartSeason();
 
         getServer().getPluginManager().registerEvents(new CropGrowth(this), this); // initialise event
 
